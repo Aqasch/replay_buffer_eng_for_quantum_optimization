@@ -7,7 +7,7 @@
   <img src="pics/model.jpg" alt="Sublime's custom image" width="1000" />
 </p>
 
-## Contributions
+## Whats new?
 
 ### 🔁 **ReaPER+ (Annealed prioritized experience replay)**
 
