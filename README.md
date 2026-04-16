@@ -9,7 +9,9 @@
   <img src="pics/model.jpg" alt="Sublime's custom image" width="1000" />
 </p>
 
-## Contributions
+
+## Whats New?
+----------
 
 ### 🔁 **ReaPER+ (Annealed prioritized experience replay)**
 
@@ -23,7 +25,7 @@
 
 - **Validated beyond the quantum domain on the classical LunarLander-v3** benchmark, achieving a 9% AUC improvement over both PER and fixed ReaPER — confirming the annealing principle is domain-agnostic
 
-### 🔀 **Lightweight replay-buffer transfer for Noisy settings**
+### 🔀 **Lightweight replay-buffer transfer for noisy settings**
 
 - **A weight-free buffer transfer scheme** that reuses noiseless trajectories to warm-start RL training in depolarizing-noise environments — without transferring network weights or reward relabeling.
 <p align="center">
@@ -43,7 +45,7 @@
 - Cuts quantum circuit simulation time by up to 89% and classical optimization time by up to 85%.
 
 
-### Improve over nonRL baselines
+### 📈 Improvement over nonRL baselines
 
 | Problem    | Method                        | Min error (Ha)        | Total gates | CNOT |
 |------------|-------------------------------|-----------------------|-------------|------|
