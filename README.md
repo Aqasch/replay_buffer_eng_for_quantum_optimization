@@ -26,7 +26,7 @@ For the 1-qubit compiling with action space consisting of $\texttt{RX}, \texttt{
 python compiling/main_1q_small_rot.py --replay CHOOSE_BUFFER
 ```
 
-$\text{CHOOSE\_BUFFER}\in$ \{'per', 'reaper','her' or 'reaper_anneal'\}$. So for **ReaPER+** you simple run the following:
+CHOOSE_BUFFER can have the following entries: \{'per', 'reaper','her' or 'reaper_anneal'\}$. So for **ReaPER+** you simple run the following:
 ```
 python compiling/main_1q_small_rot.py --replay reaper_anneal
 ```
