@@ -40,10 +40,9 @@ Finally for 2-qubit compiling just run (say with **PER**):
 python compiling/main_2q.py --replay per
 ```
 
-## Quantum architecture search
+## Quantum architecture search (QAS)
 
-The RL-algorithm is isnpired by [CRLQAS](https://openreview.net/forum?id=rINBD8jPoP) but with `m` **step ammortization** and **replay buffer transfer**. Further discussed in **Whats New?** below.
-
+The RL-algorithm is isnpired by [CRLQAS](https://openreview.net/forum?id=rINBD8jPoP) but with `m` **step ammortization** and **replay buffer transfer**. Further discussed in **Whats New?** below. For the sake of reproducing, we share instructions to run code for 6- and 8-qubit QAS. The same instructions follow for 10- and 12-qubit.
 
 
 
