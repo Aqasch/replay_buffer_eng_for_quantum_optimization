@@ -9,6 +9,45 @@
 </p>
 
 
+## Running code
+```
+conda create -n {name_your_environment} python=3.10
+conda activate {name_your_environment}
+pip install -r requirements.txt
+```
+
+## Quantum compiling
+
+**(Kindly use `-h` at the end of each python script to see all available options for setting arguments)**
+
+For the 1-qubit compiling with action space consisting of $\texttt{RX}, \texttt{RY}, \texttt{RZ}$ with $\pm\pi/128$ angle simple run:
+
+```
+python compiling/main_1q_small_rot.py --replay CHOOSE_BUFFER
+```
+
+$\text{CHOOSE\_BUFFER}\in$ \{'per', 'reaper','her' or 'reaper_anneal'\}$. So for **ReaPER+** you simple run the following:
+```
+python compiling/main_1q_small_rot.py --replay reaper_anneal
+```
+
+For 1-qubit [HRC gateset](https://arxiv.org/abs/quant-ph/0111031) simply run (say with **ReaPER**):
+```
+python compiling/main_1q_hrc.py --replay reaper
+```
+Finally for 2-qubit compiling just run (say with **PER**):
+```
+python compiling/main_2q.py --replay per
+```
+
+## Quantum architecture search
+
+The RL-algorithm is isnpired by [CRLQAS](https://openreview.net/forum?id=rINBD8jPoP) but with `m` **step ammortization** and **replay buffer transfer**. Further discussed in **Whats New?** below.
+
+
+
+
+
 ## Whats New?
 ----------
 
