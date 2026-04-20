@@ -71,9 +71,16 @@ class DQN_REAPER(object):
 
         # layer-wise gamma as in DQN_PGR
         self.gamma = torch.Tensor([np.round(np.power(self.final_gamma, 1 / self.num_layers), 2)]).to(device)
-
-
-        print(f"[DQN_REAPER] Initializing ReaPER buffer (anneal={reaper_omega_anneal})")
+        print()
+        print('-x-x-x-x-x-x-')
+        if reaper_omega_anneal:
+            print(f"[DQN with ReaPER buffer (anneal={reaper_omega_anneal})")
+        else:
+            if reaper_omega == 0.0:
+                print(f"DQN with PER buffer")
+            else:
+                print(f"DQN with ReaPER (omega={reaper_omega}) buffer")
+            print('-x-x-x-x-x-x-')
         self.memory = ReliabilityAdjustedPrioritizedReplayBuffer(
             capacity=memory_size,
             alpha=reaper_alpha,
@@ -273,13 +280,7 @@ class SumTree:
 
 class ReliabilityAdjustedPrioritizedReplayBuffer:
     """
-    ReaPER - CORRECTLY IMPLEMENTED
-    
-    Key fixes:
-    1. TD errors initialized with reward magnitude (not 0)
-    2. Episode TD sums updated during push (not just during sampling)
-    3. Priorities updated on episode completion with valid TD estimates
-    4. Re-updated after first real TD errors computed
+    ReaPER
     """
 
 
@@ -337,14 +338,15 @@ class ReliabilityAdjustedPrioritizedReplayBuffer:
         self.episodes_updated = 0
 
 
-        print(f"[ReaPER CORRECT] Initialized: capacity={capacity}, alpha={alpha}")
+        # print(f"[ReaPER CORRECT] Initialized: capacity={capacity}, alpha={alpha}")
         if omega_anneal:
             print(f"  Omega schedule: {omega_start} -> {omega_end} over {omega_frames} frames")
-        else:
-            print(f"  Fixed omega = {omega}")
-        print(f"  FIX 1: TD errors initialized with reward estimates")
-        print(f"  FIX 2: Priorities updated on episode completion")
-        print(f"  FIX 3: Re-updated after first real TD errors")
+            print('-x-x-x-x-x-x-')
+        # else:
+        #     print(f"  PER")
+        # print(f"  FIX 1: TD errors initialized with reward estimates")
+        # print(f"  FIX 2: Priorities updated on episode completion")
+        # print(f"  FIX 3: Re-updated after first real TD errors")
 
 
     def get_beta(self):

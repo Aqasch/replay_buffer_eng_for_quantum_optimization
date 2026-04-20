@@ -200,8 +200,8 @@ def train(agent, env, episodes, seed, output_path,threshold):
         if e %1==0 and e > 0:
             agent.saver.save_file()
             if e % 50 == 0:
-                torch.save(agent.policy_net.state_dict(), f"{output_path}/policy_net_ep{e}_seed{seed}_model.pth")
-                torch.save(agent.optim.state_dict(), f"{output_path}/optim_net_ep{e}_seed{seed}_optim.pth")
+                # torch.save(agent.policy_net.state_dict(), f"{output_path}/policy_net_ep{e}_seed{seed}_model.pth")
+                # torch.save(agent.optim.state_dict(), f"{output_path}/optim_net_ep{e}_seed{seed}_optim.pth")
                 torch.save( {i: a._asdict() for i,a in enumerate(agent.memory.memory)}, f"{output_path}/buffer_ep{e}_{seed}_replay_buffer.pth")
         if env.error <= 0.0016:
             threshold_crossed += 1
@@ -282,10 +282,10 @@ if __name__ == '__main__':
         # exit()
         if conf['env']['num_qubits'] == 8:
             print(f"results/buffer_transfer/trained_8q/buffer_ep{e}_{args.seed}_replay_buffer.pth")
-            replay_buffer_load = torch.load(f"results/buffer_transfer/trained_8q/buffer_ep{e}_1_replay_buffer.pth")
+            replay_buffer_load = torch.load(f"results/buffer_transfer/trained_8q/buffer_ep{e}_{args.seed}_replay_buffer.pth")
         elif conf['env']['num_qubits'] == 6:
-            print(f"results/buffer_transfer/trained_6q/buffer_ep{e}_{args.seed}_replay_buffer.pth")
-            replay_buffer_load = torch.load(f"results/buffer_transfer/trained_6q/buffer_ep{e}_1_replay_buffer.pth")
+            print(f"results/buffer_transfer/6q_wo_t/buffer_ep{e}_1_replay_buffer.pth")
+            replay_buffer_load = torch.load(f"results/buffer_transfer/6q_wo_t/buffer_ep{e}_{args.seed}_replay_buffer.pth", map_location=torch.device('cpu'))
         for i in replay_buffer_load.keys():
             agent.remember(**replay_buffer_load[i])
         agent.epsilon = float(conf['agent']['epsilon_warm'])
