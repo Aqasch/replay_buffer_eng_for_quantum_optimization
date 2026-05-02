@@ -1,0 +1,4 @@
+
+qulacs
+torch
+qiskit==2.0.0
