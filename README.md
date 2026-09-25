@@ -1,5 +1,5 @@
 
-# Version 1: Reaply-Buffer Engineering for noise-aware quantum circuit optimization is on [arxiv](https://arxiv.org/abs/2604.21863)
+# Version 1: Reply-Buffer Engineering for noise-aware quantum circuit optimization is on [arxiv](https://arxiv.org/abs/2604.21863)
 ### (The code is up to date but the camera ready paper will be available soon)
 ------------------
 <h1 align="center">NeurIPS 2026</h1>
