@@ -1,8 +1,8 @@
 
-# Annealed replay and buffer transfer for noise-robust quantum circuit optimization
+# Version 1: Reaply-Buffer Engineering for noise-aware quantum circuit optimization is on [arxiv](https://arxiv.org/abs/2604.21863)
 ### (An amortized curriculum reinforcement learning approach)
 ------------------
-<h1 align="center"> Preprint <h1>
+<h1 align="center">NeurIPS 2026</h1>
 
 <p align="center">
   <img src="pics/model.jpg" alt="Sublime's custom image" width="1000" />
