@@ -1,6 +1,6 @@
 
 # Version 1: Reaply-Buffer Engineering for noise-aware quantum circuit optimization is on [arxiv](https://arxiv.org/abs/2604.21863)
-### (An amortized curriculum reinforcement learning approach)
+### (The code is up to date but the camera ready paper will be available soon)
 ------------------
 <h1 align="center">NeurIPS 2026</h1>
 
